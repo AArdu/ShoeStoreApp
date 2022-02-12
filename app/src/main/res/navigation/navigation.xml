@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.outlook.alessandroardu.shoestore.screens.login.LoginFragment"
+        android:label="Access"
+        tools:layout="@layout/login_screen">
+        <action
+            android:id="@+id/action_loginFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.outlook.alessandroardu.shoestore.screens.welcome.WelcomeFragment"
+        android:label="Welcome!"
+        tools:layout="@layout/welcome_screen">
+        <action
+            android:id="@+id/action_welcomeFragment_to_instructionsFragment"
+            app:destination="@id/instructionsFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/instructionsFragment"
+        android:name="com.outlook.alessandroardu.shoestore.screens.instructions.InstructionsFragment"
+        android:label="Instructions"
+        tools:layout="@layout/instructions_screen">
+        <action
+            android:id="@+id/action_instructionsFragment_to_shoeListFragment"
+            app:destination="@id/shoeListFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoeListFragment"
+        android:name="com.outlook.alessandroardu.shoestore.screens.shoe_list.ShoeListFragment"
+        android:label="Shop Listings"
+        tools:layout="@layout/shoe_list_screen">
+        <action
+            android:id="@+id/action_shoeListFragment_to_shoeDetailsFragment"
+            app:destination="@id/shoeDetailsFragment" />
+        <argument
+            android:name="newShoe"
+            app:argType="com.outlook.alessandroardu.shoestore.screens.shoe_list.Shoe" />
+        <argument
+            android:name="shouldSave"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoeDetailsFragment"
+        android:name="com.outlook.alessandroardu.shoestore.screens.shoe_list.ShoeDetailsFragment"
+        android:label="Add a Shoe"
+        tools:layout="@layout/shoe_details_screen">
+        <action
+            android:id="@+id/action_shoeDetailsFragment_to_shoeListFragment"
+            app:destination="@id/shoeListFragment" />
+    </fragment>
+</navigation>

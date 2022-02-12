@@ -1,0 +1,32 @@
+package com.outlook.alessandroardu.shoestore.screens.instructions
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
+import com.outlook.alessandroardu.shoestore.R
+import com.outlook.alessandroardu.shoestore.databinding.InstructionsScreenBinding
+import com.outlook.alessandroardu.shoestore.screens.shoe_list.Shoe
+
+class InstructionsFragment() : Fragment() {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val binding: InstructionsScreenBinding =
+            DataBindingUtil.inflate(inflater, R.layout.instructions_screen, container, false)
+        binding.goShopButton.setOnClickListener { v: View ->
+            v.findNavController()
+                .navigate(
+                    InstructionsFragmentDirections.actionInstructionsFragmentToShoeListFragment(
+                        Shoe("", "", "", ""), false
+                    )
+                )
+        }
+        return binding.root
+    }
+}

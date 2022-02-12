@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="shoeListFragment"
+            type="com.outlook.alessandroardu.shoestore.screens.shoe_list.ShoeListFragment" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/new_shoe_listing"
+            style="@style/title_style"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="start"
+            android:text="whazzap biaatch"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <!--android:text="@{@string/shoe_listing_text(shoeListModel.shoe.name,
+                                                      shoeListModel.shoe.size,
+                                                      shoeListModel.shoe.company,
+                                                      shoeListModel.shoe.description)}"-->
+</layout>

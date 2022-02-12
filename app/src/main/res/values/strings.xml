@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">ShoeStore</string>
+    <string name="login_title_text">Sign In or Register Your Account</string>
+    <string name="login_email_hint">Your e-mail here</string>
+    <string name="login_password_hint">Your password here</string>
+    <string name="login_register_button_text">Register</string>
+    <string name="login_button_signin_text">Sign in</string>
+    <string name="welcome_title_text">Welcome to ShoeStore!</string>
+    <string name="goToInstructinosButton_text">Instructions</string>
+    <string name="goShop_button_text">Let\'s Shop!</string>
+    <string name="instruction_title_text">How to use ShoeShop</string>
+    <string name="instructions_text_text">You choose all the shoes you want, then you give us the money, and that\'s it! \nShoes are not included</string>
+    <string name="shoe_name_hint">Shoe name (i.e. Nike Air Force 1)</string>
+    <string name="company_name_hint">Company name (i.e. Puma)</string>
+    <string name="shoe_size_hint">Shoe size (i.e. 36)</string>
+    <string name="description_hint">Description (i.e. running, white, gorgeous)</string>
+    <string name="save_button_text">Save</string>
+    <string name="cancel_button_text">Cancel</string>
+    <string name="shoe_listing_text">Shoe name: %s \nShoe company: %s \nShoe size %s \nShoe description: %s</string>
+    <string name="create_new_shoe_listing">Create New Shoe Listing</string>
+</resources>
