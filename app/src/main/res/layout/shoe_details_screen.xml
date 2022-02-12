@@ -5,8 +5,8 @@
     <data>
 
         <variable
-            name=""
-            type="" />
+            name="shoeListModel"
+            type="com.outlook.alessandroardu.shoestore.screens.shoe_list.ShoeListModel" />
         <variable
             name="shoe"
             type="com.outlook.alessandroardu.shoestore.screens.shoe_list.Shoe" />
@@ -111,6 +111,7 @@
             android:layout_height="wrap_content"
             android:text="@string/save_button_text"
             app:layout_constraintBaseline_toBaselineOf="@+id/cancel_button"
+            android:onClick="@{shoeListModel.}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/cancel_button" />
