@@ -26,12 +26,12 @@ class MainActivity : AppCompatActivity() {
         //INOTE In MainActivity, setup the nav controller
         // with the toolbar and an AppBarConfiguration
         setUpNavigation()
+
     }
 
     private fun setUpNavigation() {
         //INOTE taken from
         // https://developer.android.com/guide/navigation/navigation-ui
-        val main_layout = binding.toolbarLayout
         val toolbar = binding.toolbar
         navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
@@ -40,6 +40,5 @@ class MainActivity : AppCompatActivity() {
         toolbar.setupWithNavController(navController, appBarConfiguration)
 
     }
-
 
 }

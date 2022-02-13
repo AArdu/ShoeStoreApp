@@ -12,6 +12,7 @@
         <entry key="app/src/main/res/layout/shoe_list_screen.xml" value="0.1" />
         <entry key="app/src/main/res/layout/welcome_screen.xml" value="0.21875" />
         <entry key="app/src/main/res/menu/main_menu.xml" value="0.11481481481481481" />
+        <entry key="app/src/main/res/menu/overflow_menu.xml" value="0.335" />
       </map>
     </option>
   </component>

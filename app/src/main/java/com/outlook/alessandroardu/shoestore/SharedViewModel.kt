@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.outlook.alessandroardu.shoestore.screens.shoe_list.Shoe
-import timber.log.Timber
 
 class SharedViewModel : ViewModel() {
     private val _shoeList = MutableLiveData<MutableList<Shoe>>()

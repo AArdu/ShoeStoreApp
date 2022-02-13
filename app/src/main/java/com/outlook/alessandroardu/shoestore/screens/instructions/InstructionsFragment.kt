@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.outlook.alessandroardu.shoestore.R
 import com.outlook.alessandroardu.shoestore.databinding.InstructionsScreenBinding
-import com.outlook.alessandroardu.shoestore.screens.shoe_list.Shoe
 
 class InstructionsFragment() : Fragment() {
     override fun onCreateView(

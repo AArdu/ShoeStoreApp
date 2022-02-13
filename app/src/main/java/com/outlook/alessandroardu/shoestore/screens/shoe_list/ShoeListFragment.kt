@@ -1,19 +1,17 @@
 package com.outlook.alessandroardu.shoestore.screens.shoe_list
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.outlook.alessandroardu.shoestore.R
 import com.outlook.alessandroardu.shoestore.SharedViewModel
 import com.outlook.alessandroardu.shoestore.databinding.NewShoeListingViewBinding
 import com.outlook.alessandroardu.shoestore.databinding.ShoeListScreenBinding
-import timber.log.Timber
 
 class ShoeListFragment() : Fragment() {
     // INOTE Create a class that extends ViewModel
@@ -41,6 +39,9 @@ class ShoeListFragment() : Fragment() {
 
         addNewView()
 
+        // INOTE add logout overfow menu
+        setHasOptionsMenu(true)
+
 
         return binding.root
 
@@ -56,7 +57,6 @@ class ShoeListFragment() : Fragment() {
         // get update on items in shoe list
         viewModel.shoeList.observe(viewLifecycleOwner, Observer { shoeList ->
             shoeList.forEach { shoeItem ->
-                Timber.i(shoeItem.toString())
                 val listingTxt = getString(R.string.shoe_listing_text).format(
                     shoeItem.name,
                     shoeItem.company,
@@ -78,10 +78,14 @@ class ShoeListFragment() : Fragment() {
         })
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.overflow_menu, menu)
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return NavigationUI.onNavDestinationSelected(
+            item, requireView().findNavController()
+        ) || super.onOptionsItemSelected(item)
+    }
 }

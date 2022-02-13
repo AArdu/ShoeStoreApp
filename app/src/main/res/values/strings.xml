@@ -18,4 +18,6 @@
     <string name="cancel_button_text">Cancel</string>
     <string name="shoe_listing_text">Shoe name: %s \nShoe company: %s \nShoe size: %s \nShoe description: %s</string>
     <string name="create_new_shoe_listing">Create New Shoe Listing</string>
+    <string name="logout_string">Logout</string>
+    <string name="logout_menu">Logout</string>
 </resources>
