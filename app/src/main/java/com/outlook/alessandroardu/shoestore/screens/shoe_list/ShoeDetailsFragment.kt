@@ -6,13 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.outlook.alessandroardu.shoestore.R
+import com.outlook.alessandroardu.shoestore.SharedViewModel
 import com.outlook.alessandroardu.shoestore.databinding.ShoeDetailsScreenBinding
 
 class ShoeDetailsFragment : Fragment() {
-    private lateinit var viewModel: ShoeListModel
-    private lateinit var viewModelFactory: ShoeListModelFactory
+//    private lateinit var viewModel: ShoeListModel
+//    private lateinit var viewModelFactory: ShoeListModelFactory
+    private lateinit var model: SharedViewModel
     private lateinit var binding: ShoeDetailsScreenBinding
 
     override fun onCreateView(
@@ -63,4 +66,22 @@ class ShoeDetailsFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        model = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
+        binding.saveShoeButton.setOnClickListener { v: View ->
+            val shoeName = binding.shoeNameEditText.text.toString()
+            val shoeSize = binding.shoeSizeEditText.text.toString()
+            val shoeDescription = binding.shoeDescriptionEditText.text.toString()
+            val shoeCompany = binding.shoeCompanyEditText.text.toString()
+            val shoeImages = ""
+            val newShoe = Shoe(shoeName, shoeSize, shoeCompany, shoeDescription, listOf(shoeImages))
+            v.findNavController().navigate(
+                ShoeDetailsFragmentDirections.actionShoeDetailsFragmentToShoeListFragment(
+                    newShoe,
+                    true
+                )
+            )
+        }
+    }
 }

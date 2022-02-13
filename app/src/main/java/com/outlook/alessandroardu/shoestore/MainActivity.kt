@@ -8,7 +8,6 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.outlook.alessandroardu.shoestore.databinding.ActivityMainBinding
-import com.outlook.alessandroardu.shoestore.screens.shoe_list.ShoeListModel
 import timber.log.Timber
 
 
@@ -17,14 +16,14 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var navHostFragment: NavHostFragment
     private lateinit var navController: NavController
-    private lateinit var viewModel: MainActivityModel
+    private lateinit var viewModel: SharedViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Timber.plant(Timber.DebugTree())
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        viewModel = MainActivityModel()
+        viewModel = SharedViewModel()
         binding.mainActivityModel = viewModel
         binding.setLifecycleOwner(this)
 

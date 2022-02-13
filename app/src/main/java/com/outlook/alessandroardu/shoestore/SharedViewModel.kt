@@ -5,8 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.outlook.alessandroardu.shoestore.screens.shoe_list.Shoe
 
-class MainActivityModel : ViewModel() {
-
+class SharedViewModel : ViewModel() {
     private val _shoeList = MutableLiveData<MutableList<Shoe>>()
     val shoeList: LiveData<MutableList<Shoe>>
         get() = _shoeList

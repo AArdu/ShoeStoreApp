@@ -3,7 +3,7 @@ package com.outlook.alessandroardu.shoestore.screens.shoe_list
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.outlook.alessandroardu.shoestore.MainActivityModel
+import com.outlook.alessandroardu.shoestore.SharedViewModel
 import timber.log.Timber
 
 //INOTE Create a class that extends ViewModel
@@ -22,7 +22,7 @@ class ShoeListModel(newShoe: Shoe, shouldSaveNewShoe: Boolean) : ViewModel() {
     val hasAddedViews: LiveData<Boolean>
         get() = _hasAddedViews
 
-    private val mainActivityModel: MainActivityModel = MainActivityModel()
+    private val mainActivityModel: SharedViewModel = SharedViewModel()
 
     init {
         _shouldSave.value = shouldSaveNewShoe

@@ -41,7 +41,7 @@ class ShoeListFragment() : Fragment() {
         viewModelFactory = ShoeListModelFactory(newShoeArg.newShoe, newShoeArg.shouldSave)
         viewModel = ViewModelProvider(this, viewModelFactory).get(ShoeListModel::class.java)
         binding.shoeListModel = viewModel
-        binding.setLifecycleOwner(this)
+//        binding.setLifecycleOwner(this)
 
         // INOTE save and cancel buttons
         //  with action to navigate to the shoe detail screen
@@ -52,8 +52,9 @@ class ShoeListFragment() : Fragment() {
 
         viewModel.hasAddedViews.observe(viewLifecycleOwner, Observer { hasAddedViews ->
             if (hasAddedViews == false) {
+                Timber.i(viewModel.shoeList.value.toString())
                 // TODO make it add a new view every time save is pressed: now adding only one instance
-                viewModel.getShoeList()?.forEach { newShow ->
+                for (i in 1..6) {
                     val newShoeBinding =
                         DataBindingUtil.inflate<NewShoeListingViewBinding>(
                             layoutInflater,
@@ -61,6 +62,8 @@ class ShoeListFragment() : Fragment() {
                             this.view as ViewGroup?,
                             false
                         )
+                    val listingTxt = getString(R.string.shoe_listing_text)
+                    newShoeBinding.newShoeListing.text = listingTxt.format("name", "compay", "size", "awesome description")
                     binding.listingsParentLayout.addView(newShoeBinding.root)
                 }
                 viewModel.addShoeComplete()

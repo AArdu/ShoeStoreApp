@@ -8,7 +8,7 @@
 
         <variable
             name="mainActivityModel"
-            type="com.outlook.alessandroardu.shoestore.MainActivityModel" />
+            type="com.outlook.alessandroardu.shoestore.SharedViewModel" />
 
         <variable
             name="mainActivity"
