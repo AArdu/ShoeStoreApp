@@ -16,26 +16,22 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var navHostFragment: NavHostFragment
     private lateinit var navController: NavController
-    private lateinit var viewModel: SharedViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Timber.plant(Timber.DebugTree())
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        viewModel = SharedViewModel()
-        binding.mainActivityModel = viewModel
-        binding.setLifecycleOwner(this)
 
         //INOTE In MainActivity, setup the nav controller
         // with the toolbar and an AppBarConfiguration
         setUpNavigation()
+
     }
 
     private fun setUpNavigation() {
         //INOTE taken from
         // https://developer.android.com/guide/navigation/navigation-ui
-        val main_layout = binding.toolbarLayout
         val toolbar = binding.toolbar
         navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
@@ -44,6 +40,5 @@ class MainActivity : AppCompatActivity() {
         toolbar.setupWithNavController(navController, appBarConfiguration)
 
     }
-
 
 }

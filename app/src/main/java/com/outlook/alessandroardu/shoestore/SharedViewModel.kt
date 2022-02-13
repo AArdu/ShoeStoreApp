@@ -19,4 +19,8 @@ class SharedViewModel : ViewModel() {
         _shoeList.value = _shoeList.value
     }
 
+    fun getShoeList(): List<Shoe>? {
+        return shoeList.value?.toList()
+    }
+
 }

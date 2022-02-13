@@ -5,8 +5,9 @@
     <data>
 
         <variable
-            name="shoeListModel"
-            type="com.outlook.alessandroardu.shoestore.screens.shoe_list.ShoeListModel" />
+            name="sharedViewModel"
+            type="com.outlook.alessandroardu.shoestore.SharedViewModel" />
+
         <variable
             name="shoe"
             type="com.outlook.alessandroardu.shoestore.screens.shoe_list.Shoe" />

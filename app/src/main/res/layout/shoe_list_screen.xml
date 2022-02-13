@@ -5,8 +5,8 @@
     <data>
         <!--INOTE Create a class that extends ViewModel-->
         <variable
-            name="shoeListModel"
-            type="com.outlook.alessandroardu.shoestore.screens.shoe_list.ShoeListModel" />
+            name="sharedViewModel"
+            type="com.outlook.alessandroardu.shoestore.SharedViewModel" />
     </data>
 
     <RelativeLayout
@@ -24,7 +24,7 @@
             android:layout_marginEnd="@dimen/screen_margin"
             android:layout_marginBottom="@dimen/screen_margin"
             android:clickable="true"
-            android:contentDescription="navigate to the shoe detail screen"
+            android:focusable="true"
             app:backgroundTint="@color/design_default_color_primary"
             app:srcCompat="@android:drawable/ic_menu_add" />
 

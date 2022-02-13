@@ -7,7 +7,7 @@
     <data>
 
         <variable
-            name="mainActivityModel"
+            name="sharedViewModel"
             type="com.outlook.alessandroardu.shoestore.SharedViewModel" />
 
         <variable
@@ -33,7 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary"
-                app:menu="@menu/main_menu"
+                app:menu="@menu/overflow_menu"
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
 
         </com.google.android.material.appbar.AppBarLayout>
