@@ -5,7 +5,7 @@
     <data>
 
         <variable
-            name="sharedViewModel§"
+            name="sharedViewModel"
             type="com.outlook.alessandroardu.shoestore.SharedViewModel" />
         <variable
             name="shoe"
