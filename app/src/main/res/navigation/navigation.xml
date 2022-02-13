@@ -44,12 +44,6 @@
         <action
             android:id="@+id/action_shoeListFragment_to_shoeDetailsFragment"
             app:destination="@id/shoeDetailsFragment" />
-        <argument
-            android:name="newShoe"
-            app:argType="com.outlook.alessandroardu.shoestore.screens.shoe_list.Shoe" />
-        <argument
-            android:name="shouldSave"
-            app:argType="boolean" />
     </fragment>
     <fragment
         android:id="@+id/shoeDetailsFragment"

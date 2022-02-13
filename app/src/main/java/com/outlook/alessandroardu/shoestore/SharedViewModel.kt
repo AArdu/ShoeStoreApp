@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.outlook.alessandroardu.shoestore.screens.shoe_list.Shoe
+import timber.log.Timber
 
 class SharedViewModel : ViewModel() {
     private val _shoeList = MutableLiveData<MutableList<Shoe>>()
@@ -17,6 +18,10 @@ class SharedViewModel : ViewModel() {
     fun appendShoes(newShoe: Shoe) {
         _shoeList.value?.add(newShoe)
         _shoeList.value = _shoeList.value
+    }
+
+    fun getShoeList(): List<Shoe>? {
+        return shoeList.value?.toList()
     }
 
 }

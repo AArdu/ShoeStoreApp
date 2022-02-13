@@ -22,9 +22,7 @@ class InstructionsFragment() : Fragment() {
         binding.goShopButton.setOnClickListener { v: View ->
             v.findNavController()
                 .navigate(
-                    InstructionsFragmentDirections.actionInstructionsFragmentToShoeListFragment(
-                        Shoe("", "", "", ""), false
-                    )
+                    InstructionsFragmentDirections.actionInstructionsFragmentToShoeListFragment()
                 )
         }
         return binding.root
