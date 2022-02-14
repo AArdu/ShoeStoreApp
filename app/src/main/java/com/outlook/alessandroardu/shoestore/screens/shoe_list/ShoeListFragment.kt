@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.outlook.alessandroardu.shoestore.R
 import com.outlook.alessandroardu.shoestore.SharedViewModel
@@ -39,7 +40,6 @@ class ShoeListFragment() : Fragment() {
         }
 
         addNewView()
-
 
         return binding.root
 
@@ -77,23 +77,20 @@ class ShoeListFragment() : Fragment() {
         })
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        Timber.i("onCreateOptionsMenu")
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.overflow_menu, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        Timber.i("onOptionsItemSelected")
-        return NavigationUI.onNavDestinationSelected(
-            item, requireView().findNavController()
-        ) || super.onOptionsItemSelected(item)
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         // INOTE add logout overfow menu
         setHasOptionsMenu(true)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.overflow_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToLoginFragment())
+        return true
     }
 }

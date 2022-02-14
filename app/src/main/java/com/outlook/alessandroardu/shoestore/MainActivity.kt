@@ -33,6 +33,11 @@ class MainActivity : AppCompatActivity() {
         //INOTE taken from
         // https://developer.android.com/guide/navigation/navigation-ui
         val toolbar = binding.toolbar
+
+        // INOTE thanks to Diraj
+        //  https://knowledge.udacity.com/questions/799263
+        setSupportActionBar(toolbar)
+
         navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
         navController = navHostFragment.navController
