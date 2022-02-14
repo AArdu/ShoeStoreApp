@@ -36,7 +36,12 @@ class MainActivity : AppCompatActivity() {
         navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
         navController = navHostFragment.navController
-        val appBarConfiguration = AppBarConfiguration(navController.graph)
+
+        // INOTE for some reason the set indicates where the Up button IS NOT SHOWN
+        val appBarConfiguration = AppBarConfiguration(setOf(
+            R.id.loginFragment,
+            R.id.shoeListFragment,
+        ))
         toolbar.setupWithNavController(navController, appBarConfiguration)
 
     }

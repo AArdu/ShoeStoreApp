@@ -20,4 +20,8 @@
     <string name="create_new_shoe_listing">Create New Shoe Listing</string>
     <string name="logout_string">Logout</string>
     <string name="logout_menu">Logout</string>
+    <string name="name_label_text">name</string>
+    <string name="company_label_text">company</string>
+    <string name="size_label_text">size</string>
+    <string name="description_label_text">description</string>
 </resources>
