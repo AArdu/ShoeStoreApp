@@ -17,10 +17,10 @@
 
         <TextView
             android:id="@+id/new_shoe_listing"
-            style="@style/title_style"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="start"
+            android:background="@drawable/new_shoe_card_style"
+            android:gravity="center_horizontal"
             android:paddingTop="16dp"
             android:paddingBottom="16dp"
             android:textSize="20sp"

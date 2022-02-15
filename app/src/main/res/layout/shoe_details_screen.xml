@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
@@ -23,6 +24,7 @@
             style="@style/title_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:paddingStart="@dimen/screen_margin"
             android:paddingEnd="@dimen/screen_margin"
             android:text="@string/create_new_shoe_listing"
@@ -35,7 +37,7 @@
 
         <EditText
             android:id="@+id/shoe_name_editText"
-            android:layout_width="283dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:ems="10"
@@ -46,14 +48,12 @@
             android:paddingEnd="@dimen/screen_margin"
             android:text="@={shoe.name}"
             app:layout_constraintBottom_toTopOf="@+id/shoe_company_editText"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/shoe_company_editText"
             app:layout_constraintTop_toBottomOf="@+id/shoe_details_label" />
 
         <EditText
             android:id="@+id/shoe_size_editText"
-            android:layout_width="283dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:ems="10"
@@ -64,16 +64,15 @@
             android:paddingEnd="@dimen/screen_margin"
             android:text="@={shoe.size}"
             app:layout_constraintBottom_toTopOf="@+id/shoe_description_editText"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/shoe_description_editText"
             app:layout_constraintTop_toBottomOf="@+id/shoe_company_editText" />
 
         <EditText
             android:id="@+id/shoe_description_editText"
-            android:layout_width="283dp"
+            android:layout_width="wrap_content"
             android:layout_height="150sp"
             android:layout_marginTop="19dp"
+            android:layout_marginBottom="32dp"
             android:ellipsize="end"
             android:ems="10"
             android:gravity="start|top"
@@ -84,13 +83,11 @@
             android:text="@={shoe.description}"
             app:layout_constraintBottom_toTopOf="@+id/cancel_button"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/shoe_size_editText" />
 
         <EditText
             android:id="@+id/shoe_company_editText"
-            android:layout_width="283dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:ems="10"
@@ -101,9 +98,7 @@
             android:paddingEnd="@dimen/screen_margin"
             android:text="@={shoe.company}"
             app:layout_constraintBottom_toTopOf="@+id/shoe_size_editText"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/shoe_size_editText"
             app:layout_constraintTop_toBottomOf="@+id/shoe_name_editText" />
 
         <Button
@@ -126,6 +121,46 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/shoe_description_editText" />
+
+        <TextView
+            android:id="@+id/name_label_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name_label_text"
+            app:layout_constraintBottom_toBottomOf="@+id/shoe_name_editText"
+            app:layout_constraintEnd_toStartOf="@+id/shoe_name_editText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/shoe_name_editText" />
+
+        <TextView
+            android:id="@+id/company_label_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/company_label_text"
+            app:layout_constraintBottom_toBottomOf="@+id/shoe_company_editText"
+            app:layout_constraintEnd_toStartOf="@+id/shoe_company_editText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/shoe_company_editText" />
+
+        <TextView
+            android:id="@+id/size_label_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/size_label_text"
+            app:layout_constraintBottom_toBottomOf="@+id/shoe_size_editText"
+            app:layout_constraintEnd_toStartOf="@+id/shoe_size_editText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/shoe_size_editText" />
+
+        <TextView
+            android:id="@+id/description_label_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/description_label_text"
+            app:layout_constraintBottom_toBottomOf="@+id/shoe_description_editText"
+            app:layout_constraintEnd_toStartOf="@+id/shoe_description_editText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/shoe_description_editText" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

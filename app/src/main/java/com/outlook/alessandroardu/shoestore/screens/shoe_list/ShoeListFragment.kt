@@ -7,11 +7,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.outlook.alessandroardu.shoestore.R
 import com.outlook.alessandroardu.shoestore.SharedViewModel
 import com.outlook.alessandroardu.shoestore.databinding.NewShoeListingViewBinding
 import com.outlook.alessandroardu.shoestore.databinding.ShoeListScreenBinding
+import timber.log.Timber
 
 class ShoeListFragment() : Fragment() {
     // INOTE Create a class that extends ViewModel
@@ -38,10 +40,6 @@ class ShoeListFragment() : Fragment() {
         }
 
         addNewView()
-
-        // INOTE add logout overfow menu
-        setHasOptionsMenu(true)
-
 
         return binding.root
 
@@ -74,8 +72,16 @@ class ShoeListFragment() : Fragment() {
                 newShoeBinding.newShoeListing.text = listingTxt
                 // add view to parent layout
                 binding.listingsParentLayout.addView(newShoeBinding.root)
+
             }
         })
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        // INOTE add logout overfow menu
+        setHasOptionsMenu(true)
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -84,8 +90,7 @@ class ShoeListFragment() : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(
-            item, requireView().findNavController()
-        ) || super.onOptionsItemSelected(item)
+        findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToLoginFragment())
+        return true
     }
 }
